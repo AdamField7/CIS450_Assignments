@@ -1,3 +1,9 @@
+/*
+ * Adam Field
+ * Assignment 1
+ * console output class, attactched to cube in sample scene
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

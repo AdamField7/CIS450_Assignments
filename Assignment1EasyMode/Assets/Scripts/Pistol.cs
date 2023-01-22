@@ -1,3 +1,9 @@
+/*
+ * Adam Field
+ * Assignment 1
+ * pistol concrete class
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
