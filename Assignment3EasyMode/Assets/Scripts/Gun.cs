@@ -27,6 +27,10 @@ public class Gun : MonoBehaviour, IObserver
     public GameObject mediumAmmo;
     public GameObject largeAmmo;
 
+    Vector3 spawnPoint;
+    public GameObject pistolSpawnPoint;
+    public GameObject rifleSpawnPoint;
+
     public void UpdateData(int gun, int ammo)
     {
 
@@ -42,9 +46,9 @@ public class Gun : MonoBehaviour, IObserver
     {
         Debug.Log("Shoot");
 
-        GameObject shot = Instantiate(ammoHolder, transform.position, transform.rotation);
+        GameObject shot = Instantiate(ammoHolder, spawnPoint, transform.rotation);
 
-        shot.GetComponent<Rigidbody>().AddForce(transform.forward * 5);
+        shot.GetComponent<Rigidbody>().AddForce(transform.right * 500);
     }
 
     void UpdateGun()
@@ -54,11 +58,13 @@ public class Gun : MonoBehaviour, IObserver
         {
             rifle.SetActive(false);
             pistol.SetActive(true);
+            spawnPoint = pistolSpawnPoint.transform.position;
         }
         else if(gun == 2)
         {
             pistol.SetActive(false);
             rifle.SetActive(true);
+            spawnPoint = rifleSpawnPoint.transform.position;
         }
     }
 

@@ -10,5 +10,5 @@ using UnityEngine;
 
 public interface IObserver 
 {
-    void UpdateData(int ammo, int gun);
+    void UpdateData(int gun, int ammo);
 }

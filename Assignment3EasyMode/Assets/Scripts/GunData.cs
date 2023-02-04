@@ -19,7 +19,7 @@ public class GunData : MonoBehaviour, ISubject
     {
         foreach (IObserver observer in observers)
         {
-            observer.UpdateData(ammo, gun);
+            observer.UpdateData(gun, ammo);
             Debug.Log("notifyObservers was called from gunData");
         }
     }
@@ -28,7 +28,7 @@ public class GunData : MonoBehaviour, ISubject
     {
         observers.Add(observer);
 
-        observer.UpdateData(ammo, gun);
+        observer.UpdateData(gun, ammo);
     }
 
     public void RemoveObserver(IObserver observer)
